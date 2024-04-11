@@ -11,7 +11,7 @@
                 $count_wishlist_item->execute([$user_id]);
                 $total_wishlist_item = $count_wishlist_item->rowCount();
             ?>
-            <a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup>
+            <a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup style="color: #fffbfd;">
                 <?= $total_wishlist_item; ?> </sup></a>
 
             <?php
@@ -19,13 +19,13 @@
                 $count_cart_item->execute([$user_id]);
                 $total_cart_item = $count_cart_item->rowCount();
             ?>
-            <a href="cart.php" class="cart-btn"><i class="bx bx-cart"></i><sup>
+            <a href="cart.php" class="cart-btn"><i class="bx bx-cart"></i><sup style="color: #fffbfd;">
             <?= $total_cart_item; ?> </sup></a>
         </div>
         <!-- ------------ profile detail ------------ -->
         <div class="profile-detail">
             <?php
-                include 'connect.php'; // Include the file containing database connection code
+                include 'connect.php'; 
                 // session_start();
 
                 // Check if the "user_id" session variable is set
@@ -64,8 +64,6 @@
         <!-------------- side bar -------------->
         <div class="sidebar">
             <?php
-                // You don't need to repeat the same code block again for the sidebar, 
-                // You can use the $fetch_profile variable if it's available
                 if(isset($fetch_profile)){
             ?>
             <div class="profile">

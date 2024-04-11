@@ -133,7 +133,7 @@ if ($verify_message->rowCount() > 0) {
             <i class="bx bxs-map-alt"></i>
             <div>
                 <h4>Address</h4>
-                <p>1093 Marigold Lane, Coral Way<br>Miami, Florida, 33169</p>
+                <p>2436, General Thimayya Road,<br> East St, Camp,<br>Pune, Maharashtra 411001</p>
             </div>
         </div>
         <div class="box">

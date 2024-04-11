@@ -94,7 +94,9 @@ if (isset($_POST['submit'])) {
                         <input type="file" name="image" accept="image/*">
                     </div>
                     <input type="submit" name="submit" value="register now" class="btn">
-                    <p>Already have Account <a href="admin_login.php">Login Now</a></p>
+                    <p>Already have Account <a href="admin_login.php" style="color: blue;
+                                            font-weight: 700;
+                                            font-size: 20px;">Login Now</a></p>
                 </form>
             </div>
         </section>

@@ -10,22 +10,23 @@
 /* --------------------- Variables ----------------------- */
 :root {
     --space: 2rem;
-    /* --background-color:  #FFFDD0; */
-    /* --background-color:  #faf8d9d5; */
-    --background-color: #c4e3fd;
+    /* --background-color: #dbe2ee; */
+    --background-color: #e5ecf8;
     --outer-shadow: -3.536px -3.536px 15px 0px rgba(245, 249, 252, 0.75),
         4.096px 2.868px 10px 0px rgba(133, 168, 252, 0.75),
         inset 0.707px 0.707px 0px 0px rgba(243, 248, 253, 0.6);
-    --inner-box-shadow: -0.819px -0.574px 1px 0px rgba(255, 255, 255, 0.15),
-        -0.819px -0.574px 3px 0px rgba(255, 255, 255, 0.47),
-        2.598px 1.5px 5px 0px rgba(13, 29, 58, 0.19),
-        0.866px 0.5px 1px 0px rgba(13, 29, 58, 0.06),
+    --inner-box-shadow: -0.819px -0.574px 1px 0px rgba(248, 98, 98, 0.15),
+        -0.819px -0.574px 3px 0px rgba(92, 27, 27, 0.47),
+        2.598px 1.5px 5px 0px rgba(13, 91, 236, 0.19),
+        0.866px 0.5px 1px 0px rgba(6, 10, 17, 0.06),
         inset 0.707px 0.707px 0px 0px rgba(255, 255, 255, 0.6),
         inset -1.638px -1.147px 3px 0px rgba(49, 69, 106, 0.18);
     --color: #555;
     --black: #000;
-    --lightgray: #7888a2;
-    --orange: #f78e58;
+    /* --lightgray: #7888a2; */
+    --lightgray:midnightblue;
+    /* --orange: #f78e58; */
+    --orange:sienna;
 }
 
 body {
@@ -106,6 +107,8 @@ input[type='submit'] {
 label {
     text-transform: uppercase;
     color: var(--lightgray);
+    font-weight: 800;
+    font-size: 18px;
 }
 
 form h1 {
@@ -131,9 +134,9 @@ form p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    /* padding: 20px; */
     padding-bottom: 60px;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .form-container form {
@@ -314,7 +317,9 @@ header .right {
 }
 
 .sidebar {
-    background: var(--background-color);
+    /* background: var(--background-color); */
+    /* background: #dbe2ee; */
+    background: #cedaf0;
     padding-top: 4rem;
     width: 18vw;
     height: 100vh;
@@ -328,9 +333,11 @@ header .right {
 
 .sidebar h5 {
     text-transform: uppercase;
-    color: var(--color);
+    /* color: var(--color); */
+    color:crimson;
     padding: .5rem 1rem;
     margin: .5rem;
+    font-size: 20px;
 }
 
 .profile {
@@ -382,14 +389,15 @@ header .right {
 
 .sidebar ul li i {
     color: var(--orange);
-    font-size: 20px;
+    font-size: 25px;
     margin-right: 2rem;
 }
 
 .sidebar ul li a {
     text-transform: uppercase;
     color: var(--lightgray);
-    font-size: 12px;
+    /* color: #7a0a0a; */
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -434,8 +442,9 @@ header .right {
 form h3 {
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 1rem;
+    color: maroon;
 }
 
 form span {

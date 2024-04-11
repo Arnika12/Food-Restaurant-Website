@@ -3,7 +3,7 @@
 
 if (isset($_POST['add_to_wishlist'])) {
     if ($user_id != "") {
-        $id = uniqid(); // Assuming unique_id() generates a unique identifier
+        $id = uniqid();
 
         // Sanitize input
         $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_NUMBER_INT);

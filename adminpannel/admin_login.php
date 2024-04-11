@@ -55,7 +55,8 @@ if (isset($_POST['submit'])) {
                         <input type="password" name="pass" maxlength="20" required placeholder="Enter User Password">
                     </div>
                     <input type="submit" name="submit" value="Login now" class="btn">
-                    <p><i class='bx bx-user-plus'></i><a href="admin_register.php">Register Admin</a></p>
+                    <p style="color: blue; font-weight: 700; font-size: 20px;"><i class='bx bx-user-plus'></i><a href="admin_register.php">
+                                            Register Admin</a></p>
                 </form>
             </div>
         </section>

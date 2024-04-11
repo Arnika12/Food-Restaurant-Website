@@ -42,7 +42,8 @@ if (isset($_SESSION['admin_id'])) {
     </div>
 </header>
 
-<div class="side-container">
+<div class="side-container" >
+    
     <div class="sidebar">
         <!-- <?php if ($fetch_profile && is_array($fetch_profile)) { ?> -->
             <!-- <div class="profile"> -->

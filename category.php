@@ -58,6 +58,14 @@
     <link rel="icon" href="uploaded_img/icon.png" type="image">
     <style type="text/css">
         <?php include 'style.css'; ?>
+        
+    .box {
+        border-radius: 15px; 
+        border: 3px solid #d32f2f;
+        padding: 10px; 
+        margin-bottom: 20px; 
+        background-color: whitesmoke;
+    }
     </style>
 </head>
 <body>
@@ -112,7 +120,7 @@
                         <a href="view_page.php?pid=<?= $fetch_products['id'] ?>" class="bx bxs-show"></a>
                     </div>
                 </div>
-                <p class="price">Price: $<?= $fetch_products['price']; ?></p>
+                <p class="price">Rs. <?= $fetch_products['price']; ?></p>
                 <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                 <div class="flex-btn">
                     <input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
@@ -138,7 +146,7 @@
                         <a href="view_page.php?pid=<?= $fetch_products['id'] ?>" class="bx bxs-show"></a>
                     </div>
                 </div>
-                <p class="price">Price: $<?= $fetch_products['price']; ?></p>
+                <p class="price">Rs. <?= $fetch_products['price']; ?></p>
                 <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                 <div class="flex-btn">
                     <a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Buy Now</a>

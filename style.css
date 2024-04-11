@@ -24,10 +24,8 @@
         inset -1.638px -1.147px 3px 0px rgba(49, 69, 106, 0.18);
     --color: #555;
     --black: #000;
-    --lightgray: #7888a2;
-    --orange: #f78e58;
-    --background-img: url('image/footer.png');
-    --banner-img: url('image/banner-2.png');
+    --lightgray: midnightblue;
+    --orange: rgb(233, 28, 69);
 }
 
 body {
@@ -47,10 +45,8 @@ body.dark {
         inset -1.638px -1.147px 3px 0px rgba(45, 47, 61, 0.18);
     --color: #eee;
     --black: #fff;
-    --lightgray: #7888a2;
-    --orange: #f78e58;
-    --background-img: url('image/footer.png');
-    --banner-img: url('image/banner-4.png');
+    --lightgray: #f4f7fc;
+    --orange: #fce1d3;
 }
 
 /* --------------------- Global Setting ----------------------- */
@@ -245,17 +241,6 @@ form sup {
     margin-bottom: 1rem;
 }
 
-/* section,
-.post-editor {
-    width: 75vw;
-    min-height: 100vh;
-    background: var(--background-color);
-    border-radius: 10px;
-    padding: 4%;
-    margin: 8% 4%;
-    margin-bottom: 2%;
-} */
-
 /* ------------------ Custom Scroll Bar -------------- */
 ::-webkit-scrollbar {
     width: 8px;
@@ -434,7 +419,8 @@ header sup {
     left: 0%;
     background: var(--background-color);
     height: 100vh;
-    overflow-y: auto;     /*added now*/
+    overflow-y: auto;
+    /*added now*/
     /* height: calc(100vh - 2rem); */
     width: 300px;
     box-shadow: var(--inner-box-shadow);
@@ -665,17 +651,18 @@ footer .contact-icons a:hover {
 
 
 /*------home section --*/
+/* ------- slider ------ */
 .slider-container {
     background: var(--background-color);
     position: relative;
     width: 100%;
-    min-height: 90vh;
+    min-height: 72vh;
 }
 
 .slider-container .slideBox {
     position: absolute;
     right: 0;
-    top: 10%;
+    top: 0;
     width: 100%;
     height: 100%;
     display: grid;
@@ -688,18 +675,24 @@ footer .contact-icons a:hover {
 .slideBox.active {
     opacity: 1;
 }
+
 /* Style for images in the slider */
 .slider-container .imgBox img {
-    width: 100%; /* Make sure the image fills its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Add border radius if desired */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visual */
-    transition: transform 0.3s ease; /* Add transition effect */
+    width: 100%;
+    /* Make sure the image fills its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 10px;
+    /* Add border radius if desired */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add shadow for better visual */
+    transition: transform 0.3s ease;
+    /* Add transition effect */
 }
 
-/* Optional: Hover effect on images */
 .slider-container .imgBox img:hover {
-    transform: scale(1.05); /* Scale image slightly on hover */
+    transform: scale(1.05);
+    /* Scale image slightly on hover */
 }
 
 .textBox {
@@ -717,6 +710,17 @@ footer .contact-icons a:hover {
     font-size: 16px;
     color: var (--lightgray);
     margin-bottom: 2rem;
+}
+
+.slideBox .flex-btn a {
+    background: lavenderblush;
+    box-shadow: var(--inner-box-shadow);
+    text-transform: capitalize;
+    padding: 1rem 1rem;
+    border-radius: 1.5rem;
+    font-size: 20px;
+    color: crimson;
+    margin-right: 5%;
 }
 
 .controls {
@@ -818,7 +822,7 @@ footer .contact-icons a:hover {
 
 /* container */
 .container .box-container {
-    padding: 4% 8%;
+    padding: 1% 8% 0% 8%;
 }
 
 .container .box-container p {
@@ -836,10 +840,6 @@ footer .contact-icons a:hover {
     font-size: 3rem;
     color: var(--lightgray);
 }
-
-/* .products {
-    padding: 4% 8%;
-} */
 
 .products .box-container {
     grid-template-columns: repeat(auto-fit, 25rem);
@@ -991,7 +991,7 @@ products .box-container .box {
 /* ---------  Banner  ---------- */
 
 .banner {
-    background-image: var(--banner-img);
+    /* background-image: var(--banner-img); */
     width: 100%;
     min-height: 55vh;
     position: relative;
@@ -1165,17 +1165,16 @@ products .box-container .box {
     left: 20px;
     width: calc(100% - 40px);
     height: calc(100% - 40px);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(image/allcategory/1.jpg);
-    /* background-color: var(--orange); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(image/allcategory/1.jpg);
     border-radius: 50%;
     z-index: -3;
     transition: all 0.5s;
 }
 
-.team .box-container .box:hover .img-box::before { 
+.team .box-container .box:hover .img-box::before {
     background-color: var(--orange);
     /* background-image: url(image/allcategory/1.jpg); */
- } 
+}
 
 .team .box-container .img-box img {
     max-width: 100%;
@@ -1375,7 +1374,7 @@ products .box-container .box {
     box-shadow: var(--inner-box-shadow);
     padding: 1rem;
     border-radius: 50%;
-    height:12vw;
+    height: 12vw;
     width: 12vw;
 }
 
@@ -1389,9 +1388,11 @@ products .box-container .box {
     margin: 0.5rem 0;
     text-transform: capitalize;
 }
+
 .contact .form-container {
-    margin-top:0rem;
+    margin-top: 0rem;
 }
+
 .contact .img-box {
     margin: 0 auto;
     text-align: center;

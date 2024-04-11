@@ -69,10 +69,47 @@
         .box-container1 .box .img-box:hover img {
             transform: scale(1.1); 
         }
+        /* ----- moving text -----*/
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+    margin-top: 6%;
+}
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    animation: marquee 20s linear infinite;
+    color: brown;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.marquee p {
+    display: inline-block; /* Display each paragraph on a new line */
+    margin: 0;
+    font-size:20px;
+    padding-right: 20px; /* Add some space between paragraphs */
+}
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
     </style>
 </head>
 <body>
     <?php include 'components/user_header.php'; ?>
+    <div class="marquee-container">
+        <div class="marquee">
+            <p>Welcome to Crave Harbour!</p>
+            <p>Experience the richness of our culinary delights.</p>
+            <p>Indulge in mouthwatering dishes prepared with love.</p>
+        </div>
+    </div>
+
     <!-- hero slider start -->
     <div class="slider-container">
         <div class="slider">
@@ -199,8 +236,8 @@
                 <img src="image/1.png">
             </div>
             <div class="box">
-                <span>Healthy food</span>
-                <h1>save up to 50% off</h1>
+                <span style="font-size:4vw;color:black;">Healthy food</span>
+                <h2 style="color:#796e6e;">save up to 50% off</h2>
                 <p>Embark on a wellness journey with our enticing offer: up to 50% off on healthy 
                     food choices! From fresh salads to wholesome smoothies, our menu nourishes and 
                     delights without compromising on flavor or budget. Don't miss this limited-time 
@@ -209,22 +246,6 @@
                 <div class="flex-btn">
                     <a href="menu.php" class="btn">visit our menu</a>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="client">
-        <div class="box-container">
-            <div class="box">
-                <img src="image/shef1.png">
-            </div>
-            <div class="box">
-                <img src="image/shef2.png">
-            </div>
-            <div class="box">
-                <img src="image/shef3.jpg">
-            </div>
-            <div class="box">
-                <img src="image/shef4.jpg">
             </div>
         </div>
     </div>

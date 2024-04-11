@@ -27,19 +27,6 @@ if ($user_id != "") {
     }
 }
 
-// Remove product from cart
-if(isset($_POST['remove_product'])) {
-    $product_id = $_POST['product_id'];
-    $delete_product = $conn->prepare("DELETE FROM cart WHERE user_id = ? AND product_id = ?");
-    if($delete_product->execute([$user_id, $product_id])) {
-        // Product removed successfully
-        header("Refresh:0"); // Refresh the page to reflect changes
-    } else {
-        // Error occurred while removing the product
-        $warning_msg[] = 'Failed to remove product from cart.';
-    }
-}
-
 // Place order
 if (isset($_POST['place_order'])) {
     if ($user_id != "") {
@@ -97,6 +84,7 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
         echo "<script>alert('Failed to place order. Please try again later.');</script>";
     }
 }
+
 ?>
 
 <style type="text/css">
@@ -110,21 +98,6 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crave Harbour - Checkout Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .remove-btn {
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .remove-btn:hover {
-            background-color: #ff5252;
-        }
-    </style>
 </head>
 <body>
     <?php include 'components/user_header.php'; ?>
@@ -132,7 +105,7 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
     <section style="padding: 1%; background-color: #f0f0f0;">
         <div class="banner" style="background-color: #ffffff; border-radius: 5px; padding: 2%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 0; min-height: 30vh;">
             <div class="detail" style="text-align: center;">
-                <a href="cart.php" style="text-decoration: none; color: #333333; font-size:20px;"><i class="bx bx-left-arrow-alt"></i> Go to cart </a>
+                <a href="home.php" style="text-decoration: none; color: #333333; font-size:20px;"><i class="bx bx-left-arrow-alt"></i> Back to Home </a>
             </div><br>
             <h1 style="color: #ff004f; margin-top: 2%; text-align: center; font-size:50px;">Proceed for checkout </h1>
         </div>
@@ -193,15 +166,10 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
                             <img src="uploaded_img/<?php echo $fetch_cart['product_image']; ?>" alt="Product Image">
                             <div class="cart-details">
                                 <h3><?php echo $fetch_cart['product_name']; ?></h3>
-                                <p>Price: Rs. <?php echo $fetch_cart['price']; ?></p>
+                                <p>Price: $<?php echo $fetch_cart['price']; ?></p>
                                 <p>Quantity: <?php echo $fetch_cart['qty']; ?></p>
-                                <p>Subtotal: Rs. <?php echo $sub_total; ?></p>
-                                 <!-- Add Remove button -->
-                                <form action="" method="post">
-                                    <input type="hidden" name="product_id" value="<?php echo $fetch_cart['product_id']; ?>">
-                                    <button type="submit" name="remove_product" class="remove-btn">Remove</button>
-                                </form>
-                                </div>
+                                <p>Subtotal: $<?php echo $sub_total; ?></p>
+                            </div>
                         </div>
                 <?php
                     }
