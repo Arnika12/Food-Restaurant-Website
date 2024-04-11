@@ -8,13 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <style>
+      .questions{
+    padding: 20px 0; 
+  text-align:left;}
+    </style>
+  </head>
 <body>
 
     <!-- Creating footer  -->
     <footer>
   <div class="container">
+  <div class="questions">
+              Questions ? Call
+              <a href="tel:+91 888-768-9089" style="color: #FFFFFFB3;">+91 888-768-9089</a>
+        </div>
     <div class="row">
+      <section>
+        <p>
+        <a href="faq">FAQ</a><br>
+        <a href="Footerfiles/help.html">Help Centre</a><br>
+        <a href="components/terms.php">Terms of use </a><br>
+        <a href="faq">Media Centre</a></p>
+      </section>
       <section>
         <h4>Hours :</h4>
         <p>Mon - Thurs : 11:00am - 11:00pm<br>

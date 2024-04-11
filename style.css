@@ -585,7 +585,7 @@ header sup {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 50px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -602,7 +602,7 @@ footer .row {
 
 footer section {
     flex: 0 0 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
+    max-width: calc(22.33% - 20px);
     margin-bottom: 40px;
 }
 
@@ -1348,8 +1348,8 @@ products .box-container .box {
 
 /*-------  contact us ---- */
 .services {
-    padding: 5% 10%;
-    background-image: url('image/banner.png');
+    padding: 0% 10%;
+    /* background-image: url('image/banner.png'); */
     background-repeat: no-repeat;
     position: relative;
     color: var(--lightgray);
@@ -1366,7 +1366,7 @@ products .box-container .box {
     background: var(--background-color);
     margin: 1rem;
     text-align: center;
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: .5rem;
     line-height: 1.5;
 }
@@ -1375,6 +1375,8 @@ products .box-container .box {
     box-shadow: var(--inner-box-shadow);
     padding: 1rem;
     border-radius: 50%;
+    height:12vw;
+    width: 12vw;
 }
 
 .services .box-container .box div {
@@ -1387,7 +1389,9 @@ products .box-container .box {
     margin: 0.5rem 0;
     text-transform: capitalize;
 }
-
+.contact .form-container {
+    margin-top:0rem;
+}
 .contact .img-box {
     margin: 0 auto;
     text-align: center;

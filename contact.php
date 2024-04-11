@@ -61,44 +61,43 @@ if ($verify_message->rowCount() > 0) {
 <body>
     <?php include 'components/user_header.php'; ?>
    
-    <div class="banner">
-        <div class="detail">
-            <h1>contact us </h1>
-            <a href="home.php">Home</a> <span> <i class="bx bx-right-arrow-alt"></i> contact us </span>
+    <section style="padding: 1%; background-color: #f0f0f0;">
+        <div class="banner" style="background-color: #ffffff; border-radius: 5px; padding: 2%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 0; min-height: 30vh;">
+            <div class="detail" style="text-align: center;">
+                <a href="home.php" style="text-decoration: none; color: #333333; font-size:20px;"><i class="bx bx-left-arrow-alt"></i> Back to Home </a>
+            </div><br>
+            <h1 style="color: #ff004f; margin-top: 2%; text-align: center; font-size:50px;">Contact Us </h1>
         </div>
-    </div>
+    </section>
 
     <div class="services">
-    <div class="box-container">
-        <div class="box">
-            <img src="image/0.png">
-            <div>
-                <h1>Free shipping fast</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="box-container">
+            <div class="box">
+                <img src="uploaded_img/1.jpg">
+                <div>
+                    <h1>Free shipping fast</h1>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img src="image/1.png">
-            <div>
-                <h1>money back & guarantee </h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="box">
+                <img src="uploaded_img/guarantee1.png">
+                <div>
+                    <h1>money back & guarantee </h1>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img src="image/2.png">
-            <div>
-                <h1>online support 24/7 </h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="box">
+                <img src="uploaded_img/24service.png">
+                <div>
+                    <h1>online support 24/7 </h1>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
 
 	<div class="contact">
     <div class="form-container">
         <form action="" method="post">
-            <div class="img-box"><img src="image/contact.png"></div>
+            <!-- <div class="img-box"><img src="image/contact.png"></div> -->
             <div class="title">
                 <h1>Drop Us A Line</h1>
                 <p style="text-align: center;">Just A Few Clicks To Make The Reservation Online For Saving Your Time And Money</p>
@@ -117,7 +116,7 @@ if ($verify_message->rowCount() > 0) {
             </div>
             <div class="input-field">
                 <label>comment <sup>*</sup></label>
-                <textarea name="message" cols="30" rows="10" required placeholder="Add any comment you think is necessary"></textarea>
+                <textarea name="message" cols="30" rows="8" required placeholder="Add any comment you think is necessary"></textarea>
             </div>
             <input type="submit" name="send_message" value="Send message" class="btn">
         </form>
@@ -128,7 +127,6 @@ if ($verify_message->rowCount() > 0) {
 <div class="address">
     <div class="title">
         <h1>Our Contact</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </div>
     <div class="box-container">
         <div class="box">
@@ -142,14 +140,14 @@ if ($verify_message->rowCount() > 0) {
             <i class="bx bxs-phone-incoming"></i>
             <div>
                 <h4>Phone Number</h4>
-                <p>9088333169</p>
+                <p><a href="tel:+91 9088333169">+91 9088333169</a></p>
             </div>
         </div>
 <div class="box">
             <i class="bx bxs-envelope"></i>
             <div>
                 <h4>email</h4>
-                <p>Craveharbour@gmail.com</p>
+                <p><a href="mailto:craveharbour@gmail.com">craveharbour@gmail.com</a></p>
             </div>
         </div>
     </div>
