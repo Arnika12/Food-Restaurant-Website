@@ -1,0 +1,67 @@
+
+/* ----- all_categories.php  ------- */
+.category {
+    padding: 60px;
+    text-align: center;
+}
+
+.banner1 {
+    background-image: var(--banner-img);
+    width: 100%;
+    min-height: 45vh;
+    position: relative;
+    text-transform: capitalize;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner1 h1 {
+    color: #d32f2f;
+    font-size: 60px;
+}
+
+.banner1 p {
+    color: #2b2c3f;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.box {
+    text-align: center;
+    color: var(--lightgray);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: none;
+    margin: 20px 0;
+}
+
+.box .img-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 1rem;
+    background: green;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 2px solid red;
+    /* Add border */
+}
+
+.box .img-box img {
+    width: 100%;
+    transition: .5s ease;
+    text-align: center;
+}
+
+.box .img-box:hover img {
+    transform: scale(1.2);
+}
