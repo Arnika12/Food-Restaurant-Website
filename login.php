@@ -42,13 +42,23 @@ if (isset($_POST['submit']))
     <!-- box icon cdn link -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="uploaded_img/icon.png" type="image">
-    <title>Admin - registration page</title>
+    <title>Crave Harbour User - Login page</title>
+    <style>
+        .detail a{
+            color: brown; text-decoration: none;
+            margin-left:5%;
+            font-size:1.5rem;
+        }
+    </style>
 </head>
 
 <body>
         <?php include 'components/user_header.php'; ?>
+        <div class="detail" style="margin-top:10%;">
+            <a href="home.php"><i class="bx bx-left-arrow-alt"></i> Back to Home</a>
+        </div>
         <section>
-            <div class="form-container" id="admin_login">
+            <div class="form-container" id="admin_login" style="margin-top:0;">
                 <form action="" method="post" enctype="multipart/form-data">
                     <h3>login now</h3>
                     <div class="input-field"> 
