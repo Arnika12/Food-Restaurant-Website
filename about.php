@@ -103,22 +103,22 @@
             </div>
             <div class="box">
                 <span>Experience The Best Food</span>
-                <h1>How To Order?</h1>
-                <p>Follow The Steps</p>
-                <!-- <div class="steps">
-                    <p>1. Browse menu and select items.</p><br>
-                    <p>2. Review order and provide delivery details.</p><br>
-                    <p>3. Choose payment method.</p><br>
-                    <p>4. Place order.</p><br>
-                    <p>5. Receive confirmation.</p><br>
+                <h1>How To Order?</h1><br>
+                <p>Follow The Steps</p><br>
+                <div class="steps">
+                    <p>1. Browse menu and select items.</p>
+                    <p>2. Review order and provide delivery details.</p>
+                    <p>3. Choose payment method.</p>
+                    <p>4. Place order.</p>
+                    <p>5. Receive confirmation.</p>
                     <p>6. Enjoy your meal!</p>
 
-                </div> -->
-                <div class="steps">
+                </div>
+                <!-- <div class="steps">
                     <div class="img-box">
                         <div style="display: flex; align-items: center;">
                             <div class="img">
-                                <img src="image/icon-16.png">
+                                <img src="image/chef-aboutus/orderonline.jpg">
                             </div>
                             <div><img src="image/icon-19.png"></div>
                         </div>
@@ -146,7 +146,7 @@
                         <span>3</span>
                         <p>EAT & enjoy !</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -165,10 +165,10 @@
                 <div class="detail">
                     <h1>Julia</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -180,10 +180,10 @@
                 <div class="detail">
                     <h1>Allen Solly</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -195,10 +195,10 @@
                 <div class="detail">
                     <h1>Stewart</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -210,10 +210,10 @@
                 <div class="detail">
                     <h1>Alain Ducasse</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -225,10 +225,10 @@
                 <div class="detail">
                     <h1>Gordon Ramsay</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -240,10 +240,10 @@
                 <div class="detail">
                     <h1>Martin</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -255,10 +255,10 @@
                 <div class="detail">
                     <h1>Alleno</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -270,10 +270,10 @@
                 <div class="detail">
                     <h1>Paula Deen</h1>
                     <div class="social-links">
-                        <i class="bx bxl-facebook"></i>
-                        <i class="bx bxl-twitter"></i>
-                        <i class="bx bxl-instagram-alt"></i>
-                        <i class="bx bxl-linkedin"></i>
+                        <a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bx bxl-instagram-alt"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://twitter.com/"><i class="bx bxl-twitter"></i></a>
                     </div>
                 </div>
             </div>
