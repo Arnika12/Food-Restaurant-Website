@@ -14,7 +14,6 @@
 
     include 'components/add_wishlist.php'; 
     include 'components/add_cart.php'; 
-
 ?>
 
 <style type="text/css">
@@ -28,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- box icon cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="../uploaded_img/icon.png" type="image">
+    <link rel="icon" href="uploaded_img/icon.png" type="image">
     <title>Crave Harbour - About us Page</title>
 </head>
 <body>
@@ -68,43 +67,53 @@
                 <span>Our Short Story</span>
                 <h1>Dedicated To Delight You</h1>
                 <p>We Bring To You The Unforgettable Moment With Our Delicious Dishes. All Of Our Products Are Made From Scratch Using Family Recipes With Only The Highest Quality Ingredients. We Sell Fresh Food Daily To Ensure Only The Best Products Are Sold To Our Customers.</p>
+                <br><br>
                 <span>Our Services</span>
                 <div class="services">
                     <div class="img-box">
                         <div class="img">
-                            <img src="image/icon-13.png">
+                            <img src="image/reservetable/2.jpg">
                         </div>
                         <p>Reservation</p>
                     </div>
                     <div class="img-box">
                         <div class="img">
-                            <img src="image/icon-14.png">
+                            <img src="image/reservetable/event.jpg">
                         </div>
                         <p>Private Event </p>
                     </div>
                     <div class="img-box">
                         <div class="img">
-                            <img src="image/icon-15.png">
+                            <img src="image/reservetable/orderonline.jpg">
                         </div>
                         <p> Online order </p>
                     </div>
                 </div>
             </div>
             <div class="box">
-                <img src="image/about.png" alt="about image">
+                <img src="image/aboutus.jpg" alt="about image">
             </div>
         </div>
     </div>
 
-    <div class="process">
+    <div class="process" style="margin-top:7rem;">
         <div class="box-container">
             <div class="box">
-                <img src="image/process.png">
+                <img src="image/process.webp">
             </div>
             <div class="box">
                 <span>Experience The Best Food</span>
                 <h1>How To Order?</h1>
                 <p>Follow The Steps</p>
+                <!-- <div class="steps">
+                    <p>1. Browse menu and select items.</p><br>
+                    <p>2. Review order and provide delivery details.</p><br>
+                    <p>3. Choose payment method.</p><br>
+                    <p>4. Place order.</p><br>
+                    <p>5. Receive confirmation.</p><br>
+                    <p>6. Enjoy your meal!</p>
+
+                </div> -->
                 <div class="steps">
                     <div class="img-box">
                         <div style="display: flex; align-items: center;">
@@ -144,10 +153,8 @@
 
     <div class="team">
         <div class="title">
-            <span>We Make Special</span>
-            <h1>Meet Our Chef</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
+            <span style="font-size:2rem;">We Make Special</span>
+            <h1 style="font-size:3.5rem;">Meet Our Chef</h1>
         </div>
 
         <div class="box-container">
@@ -156,7 +163,7 @@
                     <img src="image/chef-aboutus/1.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Julia</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -186,7 +193,7 @@
                     <img src="image/chef-aboutus/3.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Stewart</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -201,7 +208,7 @@
                     <img src="image/chef-aboutus/4.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Alain Ducasse</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -216,7 +223,7 @@
                     <img src="image/chef-aboutus/5.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Gordon Ramsay</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -231,7 +238,7 @@
                     <img src="image/chef-aboutus/6.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Martin</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -246,7 +253,7 @@
                     <img src="image/chef-aboutus/7.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Alleno</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -261,7 +268,7 @@
                     <img src="image/chef-aboutus/8.png">
                 </div>
                 <div class="detail">
-                    <h1>Allen Solly</h1>
+                    <h1>Paula Deen</h1>
                     <div class="social-links">
                         <i class="bx bxl-facebook"></i>
                         <i class="bx bxl-twitter"></i>
@@ -274,7 +281,7 @@
     </div>
 
     <!-- -----  reviews --------- -->
-    <div class="reviews">
+    <!-- <div class="reviews">
         <div class="title">
             <h1>The Best Food In Town</h1>
         </div>
@@ -348,7 +355,7 @@
                 ?>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <?php include 'components/footer.php'; ?>

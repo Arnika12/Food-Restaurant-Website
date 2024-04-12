@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title> Crave Harbour - Welcome Page</title>
+    <link rel="icon" href="../uploaded_img/icon.png" type="image">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            /* background-color: #f0f0f0; */
             background-color: lightgrey;
         }
         .container {
             max-width: 600px;
             margin: 100px auto;
             text-align: center;
-            /* background-color: #fff; */
             background-color:azure;
             padding: 20px;
             border-radius: 8px;
@@ -45,8 +44,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Our Website!</h1>
-        <p>Please select an option:</p>
+        <h1>!! Welcome to CRAVE HARBOUR !!</h1>
+        <P><h3>To Proceed</h3></P>
+        <p><h3>Please select an option:</h3></p>
         <a href="admin_register.php" class="btn">Register</a>
         <a href="admin_login.php" class="btn">Log In</a>
     </div>

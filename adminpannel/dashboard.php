@@ -124,7 +124,7 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 
                 <div class="box">
                     <?php
-                        $select_canceled_order = $conn->prepare("SELECT * FROM orders WHERE status=?");
+                        $select_canceled_order = $conn->prepare("SELECT * FROM orders WHERE order_status=?");
                         $select_canceled_order->execute(['canceled']);
                         $total_canceled_order = $select_canceled_order->rowCount();
                     ?> 
@@ -135,7 +135,7 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 
                 <div class="box">
                     <?php
-                        $select_confirm_order = $conn->prepare("SELECT * FROM orders WHERE status=?");
+                        $select_confirm_order = $conn->prepare("SELECT * FROM orders WHERE order_status=?");
                         $select_confirm_order->execute(['in progress']);
                         $total_confirm_order = $select_confirm_order->rowCount();
                     ?> 

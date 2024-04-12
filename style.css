@@ -1034,15 +1034,15 @@ products .box-container .box {
 }
 
 .about-us .box-container h1 {
-    font-size: 2.5rem;
-    color: var(--color);
+    font-size: 3rem;
+    color: crimson;
     margin: 1rem;
 }
 
 .about-us .box-container span,
 .process span {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--lightgray);
 }
 
@@ -1053,7 +1053,10 @@ products .box-container .box {
 }
 
 .about-us .box-container .box:nth-child(2) img {
-    width: 100%;
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 30px;
 }
 
 .about-us .service {
@@ -1081,7 +1084,41 @@ products .box-container .box {
 .about-us .service .img:hover {
     box-shadow: var(--outer-shadow);
 }
+/* Styling for Services section */
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
 
+.services .img-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.services .img {
+    width: 150px; /* Adjust as needed */
+    height: 120px; /* Adjust as needed */
+    margin: 0 auto 10px;
+}
+.about-us .box-container .box .img-box{
+    border: none;
+    border-radius: 0;   
+}
+.about-us .box-container .box .img-box img {
+    width: 80%;
+    transition: .5s ease;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    height: 70%;
+}
+
+.services p {
+    font-size: 18px;
+}
 .process .box-container {
     justify-content: space-evenly;
     color: var(--lightgray);
@@ -1109,7 +1146,12 @@ products .box-container .box {
     padding: .5rem;
     margin: 1rem;
 }
-
+.process .box-container .box img{
+    border: none;
+    border-radius: 20px;
+    height: 100%;
+    width:100%;
+}
 .process .box-container .steps span {
     width: 40px;
     height: 40px;
@@ -1196,7 +1238,7 @@ products .box-container .box {
 
 .team .box-container .detail h1 {
     text-transform: capitalize;
-    color: var(--color);
+    color: crimson;
     font-size: 20px;
 }
 
@@ -1209,7 +1251,7 @@ products .box-container .box {
 }
 
 /* ---- review styling ----- */
-.reviews {
+/* .reviews {
     padding: 4% 8%;
 }
 
@@ -1260,7 +1302,7 @@ products .box-container .box {
     top: 5%;
     font-size: 2rem;
     color: var(--orange);
-}
+} */
 
 /* ---------- View Page ---------- */
 /* .view_page {
