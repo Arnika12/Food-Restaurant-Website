@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="admin_style.css">
-    <link rel="icon" href="uploaded_img/icon.png" type="image">
+    <link rel="icon" href="../uploaded_img/icon.png" type="image">
 </head>
 <body>
 <div class="main-container">

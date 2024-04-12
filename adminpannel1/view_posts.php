@@ -44,7 +44,7 @@ if (isset($_POST['delete'])) {
           integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
           <link rel="icon" href="../uploaded_img/icon.png" type="image">
-          <title>Admin - Product Page</title>
+          <title> Crave Harbour Admin - Product Page</title>
 </head>
 <body>
 <div class="main-container">
@@ -66,7 +66,7 @@ if (isset($_POST['delete'])) {
                                 <?= $fetch_post['status']; ?>
                             </div>
                             <?php if ($fetch_post['image'] != '') { ?>
-                                <img src="../uploaded_img/<?= $fetch_post['image']; ?>" class="image">
+                                <img src="../image/<?= $fetch_post['image']; ?>" class="image">
                             <?php } ?>
                             <div class="price">Rs. <?= $fetch_post['price']; ?>/-</div>
                             <div class="title"><?= $fetch_post['name']; ?></div>
@@ -83,7 +83,7 @@ if (isset($_POST['delete'])) {
                         <form action="" method="post" class="box">
                             <input type="hidden" name="product_id" value="<?= $fetch_post['id']; ?>">
                             <?php if (isset($fetch_post['image']) && $fetch_post['image'] != '') { ?>
-                                <img src="../uploaded_img/<?= $fetch_post['image']; ?>" class="image">
+                                <img src="../image/<?= $fetch_post['image']; ?>" class="image">
                             <?php } ?>
                             <div class="status"
                                  style="color: <?php echo isset($fetch_post['status']) && $fetch_post['status'] == 'active' ? 'limegreen' : 'coral'; ?>;">

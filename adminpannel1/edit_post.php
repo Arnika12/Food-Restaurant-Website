@@ -100,7 +100,6 @@
     <link rel="icon" href="uploaded_img/icon.png" type="image">
     <title>Admin - Edit Product Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="../uploaded_img/icon.png" type="image">
 </head>
 <body>
     <div class="main-container">
