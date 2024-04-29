@@ -1,9 +1,10 @@
 <?php
-// Include database connection
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include 'components/connect.php'; 
 session_start();
 
-// Initialize warning messages array
 $warning_msg = [];
 
 // Check if user is logged in
@@ -35,7 +36,6 @@ if(isset($_POST['remove_product'])) {
         // Product removed successfully
         header("Refresh:0"); // Refresh the page to reflect changes
     } else {
-        // Error occurred while removing the product
         $warning_msg[] = 'Failed to remove product from cart.';
     }
 }
@@ -49,14 +49,13 @@ if (isset($_POST['place_order'])) {
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $address = filter_input(INPUT_POST, 'flat', FILTER_SANITIZE_STRING) . ', ' . filter_input(INPUT_POST, 'street', FILTER_SANITIZE_STRING) . ', ' . filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING) . ', ' . filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING) . ', ' . filter_input(INPUT_POST, 'pincode', FILTER_SANITIZE_STRING);
         $address_type = filter_input(INPUT_POST, 'address_type', FILTER_SANITIZE_STRING);
+        $product_id = filter_input(INPUT_POST, 'product_id', FILTER_SANITIZE_NUMBER_INT);
 
         // Check if 'method' is set in the $_POST array
         if (isset($_POST['payment_method'])) {
             if ($_POST['payment_method'] == "cash_on_delivery") {
-                // Process cash on delivery order
-                processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount);
+                processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount, $product_id);
             } elseif ($_POST['payment_method'] == "online_payment") {
-                // Redirect to payment page for online payment
                 header('Location: payscript.php');
                 exit();
             } else {
@@ -70,30 +69,18 @@ if (isset($_POST['place_order'])) {
     }
 }
 
-function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount) {
-    // Prepare and execute SQL statement to insert order details into the database
-    $insert_order = $conn->prepare("INSERT INTO orders (user_id, name, number, email, address, address_type, payment_method, total_amount, order_date, order_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-    // Assume 'Pending' as the initial order status
-    $order_status = "Pending";
-    $payment_method = "Cash on Delivery"; // Adding payment method
+function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount, $product_id) {
+    $insert_order = $conn->prepare("INSERT INTO orders (user_id, name, number, email, address, address_type, payment_method, total_amount, order_date, order_status, product_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending', ?)");
     
-    // Get the current date
     $order_date = date("Y-m-d");
 
-    // Bind parameters and execute the statement
-    $insert_order->execute([$user_id, $name, $number, $email, $address, $address_type, $payment_method, $total_amount, $order_date, $order_status]);
-    
-    // Check if the order was successfully inserted
-    if ($insert_order->rowCount() > 0) {
-        // Clear the cart for the user by deleting cart items from the database
+    $insert_order->execute([$user_id, $name, $number, $email, $address, $address_type, 'Cash on Delivery', $total_amount, $order_date, $product_id]);
+        if ($insert_order->rowCount() > 0) {
         $clear_cart = $conn->prepare("DELETE FROM cart WHERE user_id = ?");
         $clear_cart->execute([$user_id]);
         
-        // Display a success message to the user
         echo "<script>alert('Order placed successfully!');</script>";
     } else {
-        // If the order insertion failed, display an error message
         echo "<script>alert('Failed to place order. Please try again later.');</script>";
     }
 }
@@ -171,6 +158,8 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
                         <option value="cash_on_delivery">Cash on Delivery</option>
                         <option value="online_payment">Online Payment</option>
                     </select>
+                    <!-- Hidden input to store product_id -->
+                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
                 </div>
                 
                 <!-- Place Order Button -->

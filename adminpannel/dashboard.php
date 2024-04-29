@@ -26,7 +26,7 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
     <!-- box icon cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="../uploaded_img/icon.png" type="image">
-    <title>Admin - Dashboard</title>
+    <title>crave harbour Admin - Dashboard</title>
 </head>
 <body>
     <?php include '../components/dark.php'; ?>
@@ -39,11 +39,6 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                     <h3>Welcome !</h3>
                     <p><?= $fetch_profile['name']; ?></p>
                     <a href="update_profile.php" class="btn">Update Profile</a>
-                </div>
-                <div class="box">
-                    <h3>Generate Report</h3>
-                    <p>See Product Analytics</p>
-                    <a href="generate_report.php" class="btn">Check report</a>
                 </div>
                 
                 <div class="box">
@@ -89,6 +84,12 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                     <a href="view_posts.php" class="btn">See Deactive products</a>
                 </div>
 
+                <div class="box">
+                    <h3>Generate Report</h3>
+                    <p>See Product Analytics</p>
+                    <a href="generate_report.php" class="btn">Check report</a>
+                </div>
+                
                 <div class="box">
                     <?php
                         $select_users = $conn->prepare("SELECT * FROM users");

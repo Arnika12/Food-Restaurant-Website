@@ -9,6 +9,8 @@
     }
 
     include 'components/add_cart.php';
+    // include 'components/add_wishlist.php';
+
 
     // Define empty arrays for alert messages
     $success_msg = [];
@@ -136,7 +138,7 @@
                     if ($select_products->rowCount() > 0) {
                         while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <form action="" method="post" class="box">
+            <form  method="post" class="box">
                 <img src="uploaded_img/<?= $fetch_products['image']; ?>">
                 <div class="button">
                     <h3 class="name"><?= $fetch_products['name']; ?></h3>

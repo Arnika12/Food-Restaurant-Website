@@ -9,8 +9,31 @@
     }
 
     $get_id = isset($_GET['get_id']) ? $_GET['get_id'] : '';
-    include 'components/wishlist.php'; 
+    include 'components/add_wishlist.php'; 
     include 'components/add_cart.php'; 
+
+    // Define empty arrays for alert messages
+    $success_msg = [];
+    $warning_msg = [];
+    $info_msg = [];
+    $error_msg = [];
+
+    // Add product to wishlist
+    if (isset($_POST['add_to_wishlist'])) {
+        $product_id = $_POST['product_id'];
+        $product_id = filter_var($product_id, FILTER_SANITIZE_STRING);
+
+        $verify_wishlist = $conn->prepare("SELECT * FROM wishlist WHERE user_id=? AND product_id=?");
+        $verify_wishlist->execute([$user_id, $product_id]);
+
+        if ($verify_wishlist->rowCount() > 0) {
+            $warning_msg[] = 'Product already added to wishlist';
+        } else {
+            $add_to_wishlist = $conn->prepare("INSERT INTO wishlist (user_id, product_id) VALUES (?, ?)");
+            $add_to_wishlist->execute([$user_id, $product_id]);
+            $success_msg[] = 'Product added to wishlist';
+        }
+    }
 ?>
 
 <style type="text/css">
@@ -33,8 +56,8 @@
             min-height: 20vh;
         }
         .detail {
-        margin-top: 20px; /* Adjust this value as needed */
-    }
+        margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -50,7 +73,7 @@
     ">
         <!-- Back button -->
         <div class="detail" style="text-align: center;">
-        <a href="javascript:history.go(-1);" style="
+        <a href="menu.php" style="
                 text-decoration: none;
                 color: #333333;
                 font-size:20px;
@@ -71,15 +94,13 @@
         <form action="" method="post" class="box">
             <img src="uploaded_img/<?= $fetch_products['image']; ?>">
                 <div class="detail">
-                    <p class="price">$<?= $fetch_products['price']; ?>/-</p>
+                    <p class="price">Rs. <?= $fetch_products['price']; ?>/-</p>
                     <div class="name"><?= $fetch_products['name']; ?></div>
                     <p class="product-detail"><?= $fetch_products['product_detail']; ?></p>
                     <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                     <div class="button">
-                    <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
-<input type="hidden" name="qty" value="1">
-<button type="submit" name="add_to_cart" class="btn">Add to Cart</button>
-<button type="submit" name="add_to_wishlist" class="btn">Add to Wishlist</button>
+                        <button type="submit" name="add_to_cart" class="btn">Add to Cart</button>
+                        <button type="submit" name="add_to_wishlist" class="btn">Add to Wishlist</button>
                        </div>
                 </div>
         </form>

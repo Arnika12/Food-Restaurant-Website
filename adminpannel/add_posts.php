@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="main-container">
     <?php include '../components/admin_header.php'; ?>
     <section class="post-editor">
-        <h1 class="heading">Add product</h1>
+        <h1 class="heading">ADD YOUR NEW DISHES</h1>
         <div class="form-container">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="input-field">

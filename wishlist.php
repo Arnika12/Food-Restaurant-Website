@@ -88,13 +88,13 @@ $error_msg = isset($error_msg) ? (array)$error_msg : array();
         margin-top: 0;
         min-height: 30vh;
     ">
-        <div class="detail" style="text-align: center;">
-            <a href="home.php" style="
+    <div class="detail" style="text-align: left; margin-top: 2%;margin-left:2%;">
+            <a href="all_categories.php" style="
                 text-decoration: none;
                 color: #333333;
                 font-size:20px;
-            "><i class="bx bx-left-arrow-alt"></i> Back to home </a>
-        </div><br>
+            "><i class="bx bx-left-arrow-alt"></i> Back to all categories </a>
+</div><br><br>
         <h1 style="
             color: #ff004f;
             margin-top: 2%;

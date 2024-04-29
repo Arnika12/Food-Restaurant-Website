@@ -70,7 +70,7 @@ if ($verify_message->rowCount() > 0) {
         </div>
     </section>
 
-    <div class="services">
+    <!-- <div class="services">
         <div class="box-container">
             <div class="box">
                 <img src="uploaded_img/1.jpg">
@@ -92,15 +92,14 @@ if ($verify_message->rowCount() > 0) {
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 	<div class="contact">
     <div class="form-container">
         <form action="" method="post">
             <!-- <div class="img-box"><img src="image/contact.png"></div> -->
             <div class="title">
-                <h1>Drop Us A Line</h1>
-                <p style="text-align: center;">Just A Few Clicks To Make The Reservation Online For Saving Your Time And Money</p>
+                <h1>!!  SEND US YOUR QUERY !!</h1>
             </div>
             <div class="input-field">
                 <label>name <sup>*</sup></label>

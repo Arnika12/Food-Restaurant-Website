@@ -112,11 +112,11 @@ if (isset($_POST['empty_cart'])) {
                 <img src="uploaded_img/<?= $fetch_products['image']; ?>" class="img">
                 <h3 class="name"><?= $fetch_products['name']; ?></h3>
                 <div class="flex-btn">
-                    <p class="price">Price: $<?= $fetch_products['price']; ?>/-</p>
+                    <p class="price">Price: Rs.<?= $fetch_products['price']; ?>/-</p>
                     <input type="number" name="qty" required min="1" value="<?= $fetch_cart['qty']; ?>" max="99" maxlength="2" class="qtys" data-price="<?= $fetch_products['price']; ?>">
                 </div>
                 <div class="flex-btn">
-                    <p class="sub-total">Sub total <span class="subtotal-span">$<?= $sub_total ?></span></p>
+                    <p class="sub-total">Sub total <span class="subtotal-span">Rs.<?= $sub_total ?></span></p>
                     <button type="submit" name="delete_item" class="btn" onclick="return confirm('Delete this item?');">Delete</button> 
                 </div>
             </form>

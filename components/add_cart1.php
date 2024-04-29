@@ -2,6 +2,7 @@
 if (isset($_POST['add_to_cart'])) {
     if ($user_id != "") {
         $id = uniqid(); 
+
         $product_id = $_POST['product_id'];
         $qty = $_POST['qty'];
         $qty = filter_var($qty, FILTER_SANITIZE_STRING);
@@ -16,9 +17,9 @@ if (isset($_POST['add_to_cart'])) {
         $cart_count = $max_cart_item->fetch(PDO::FETCH_ASSOC)['count'];
         
         if ($verify_cart->rowCount() > 0) {
-            echo '<script>alert("Product already exists in your cart");</script>';
+            $warning_msg[] = 'Product already exists in your cart';
         } elseif ($cart_count >= 20) {
-            echo '<script>alert("Cart is full");</script>';
+            $warning_msg[] = 'Cart is full';
         } else {
             // Fetch the price of the product from the database
             $select_price = $conn->prepare("SELECT * FROM products WHERE id=? LIMIT 1");
@@ -29,13 +30,14 @@ if (isset($_POST['add_to_cart'])) {
                 // Insert the product into the cart
                 $insert_cart = $conn->prepare("INSERT INTO cart (id, user_id, product_id, price, qty) VALUES (?, ?, ?, ?, ?)");
                 $insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
-                echo '<script>alert("Product added to cart");</script>';
+                $success_msg[] = 'Product added to cart';
             } else {
-                echo '<script>alert("Product not found");</script>';
+                $warning_msg[] = 'Product not found';
             }
         }
     } else {
-        echo '<script>alert("Please login first");</script>';
+        $warning_msg[] = 'Please login first';
     }
 }
 ?>
+

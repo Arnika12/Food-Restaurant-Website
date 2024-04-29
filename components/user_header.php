@@ -1,7 +1,7 @@
 <div class="head">
     <header>
         <div class="logo">
-            <img src="image/logo.png">
+            <img src="image/logo1.png">
         </div>
         <div class="logo1">
             <div class="bx bxs-user" id="user-btn"></div>

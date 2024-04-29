@@ -65,7 +65,7 @@
         <div class="box-container">
             <div class="box">
                 <span>Our Short Story</span>
-                <h1>Dedicated To Delight You</h1>
+                <h1>Why should You choose us ??</h1>
                 <p>We Bring To You The Unforgettable Moment With Our Delicious Dishes. All Of Our Products Are Made From Scratch Using Family Recipes With Only The Highest Quality Ingredients. We Sell Fresh Food Daily To Ensure Only The Best Products Are Sold To Our Customers.</p>
                 <br><br>
                 <span>Our Services</span>

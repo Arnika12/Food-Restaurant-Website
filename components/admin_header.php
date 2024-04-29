@@ -11,7 +11,7 @@ if (isset($_SESSION['admin_id'])) {
 
 <header>
     <div class="logo">
-        <a href="dashboard.php"><img src="../image/logo.jpeg" height=100px width=100px></a>
+        <a href="dashboard.php"><img src="../image/logo1.png"  width=50%></a>
     </div>
     <div class="right">
         <div class="toggle-btn">
