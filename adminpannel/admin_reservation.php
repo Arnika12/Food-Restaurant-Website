@@ -7,7 +7,7 @@
 
     if(!isset($admin_id)){
         header('location:admin_login.php');
-        exit(); // Add exit after header redirect
+        exit(); 
     }
 
     // Update booking
@@ -22,7 +22,7 @@
     
     // Delete reservation
     if(isset($_POST['delete_booking'])){
-        $delete_id = $_POST['booking_id']; // Removed unnecessary filtering
+        $delete_id = $_POST['booking_id']; 
 
         $verify_delete = $conn->prepare("SELECT * FROM reservation WHERE id=?");
         $verify_delete->execute([$delete_id]);
@@ -38,7 +38,10 @@
 ?>
 
 <style type="text/css">
-    <?php  include 'admin_style.css'; ?>
+    <?php  
+        include 'admin_style.css'; 
+        include 'css/admin_reservation.css';
+    ?>
 </style>
 
 <!DOCTYPE html>
@@ -46,7 +49,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- box icon cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="uploaded_img/icon.png" type="image">
     <title>Admin - Unread Message Page</title>
@@ -68,7 +70,7 @@
                     <p class="name"><?= $fetch_reservation['name']; ?></p>
                     <p><span>User Email: <?= $fetch_reservation['email']; ?></span></p>
                     <p><span>User Number: <?= $fetch_reservation['number']; ?></span></p>
-                    <p><span>Total Persons: <?= $fetch_reservation['select_one']; ?></span></p>
+                    <p><span>Total Persons: <?= $fetch_reservation['person']; ?></span></p>
                     <p><span>Date: <?= $fetch_reservation['date']; ?></span></p>
                     <p><span>Time: <?= $fetch_reservation['time']; ?></span></p>
                     <p><span>Comment: <?= $fetch_reservation['comment']; ?></span></p>

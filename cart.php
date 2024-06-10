@@ -134,7 +134,7 @@ if (isset($_POST['empty_cart'])) {
             if($grand_total != 0){
         ?>
         <div class="cart-total">
-            <p>Total amount payable: <span class="total-amount">$ <?= $grand_total; ?>/-</span></p>
+            <p>Total amount payable: <span class="total-amount">Rs. <?= $grand_total; ?>/-</span></p>
             <div class="button">
                 <form action="checkout.php" method="post">
                     <button type="submit" name="empty_cart" class="btn" onclick="return confirm('Are you sure you want to empty your cart?')">Empty Cart</button>
@@ -143,6 +143,22 @@ if (isset($_POST['empty_cart'])) {
             </div>
         </div>
         <?php } ?>
+
+        <br>
+<div style="text-align: center;">
+    <button style="margin: 30px auto; display: block;"><a href="menu.php" style="
+        background-color: #ff004f;
+        color: #ffffff;
+        border: none;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-size:25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        text-align:center;">Continue to buy for more... </a></button>
+</div>
+
     </section>
 
     <?php include 'components/footer.php'; ?>
@@ -165,7 +181,7 @@ if (isset($_POST['empty_cart'])) {
             $('.subtotal-span').each(function(){
                 total += parseFloat($(this).text().replace("$", ""));
             });
-            $('.total-amount').text("$" + total.toFixed(2) + "/-");
+            $('.total-amount').text("Rs." + total.toFixed(2) + "/-");
         });
     });
     </script>

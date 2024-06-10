@@ -10,7 +10,10 @@
 ?>
 
 <style type="text/css">
-    <?php  include 'style.css'; ?>
+    <?php  
+        include 'style.css'; 
+        include 'css/all_categories.css';
+    ?>
 </style>
 
 
@@ -24,73 +27,6 @@
     <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
     <link rel="icon" href="uploaded_img/icon.png" type="image">
     <title>Crave Harbour - All Categories Page</title>
-
-    <style>
-        .category {
-            padding: 0px;
-            text-align: center;
-        }
-
-        .banner1 {
-            background-image: var(--banner-img);
-            width: 100%;
-            min-height: 20vh;
-            position: relative;
-            text-transform: capitalize;
-            font-size: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .banner1 h1{
-            color:#d32f2f;
-            font-size:60px;
-        }
-        .banner1 p{
-            color:#2b2c3f;
-        }
-        .box-container {
-            margin-top:2%;
-            margin-left: 5%;
-            margin-right: 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3vw;
-            justify-items: center;
-        }
-
-        .box {
-            text-align: center;
-            color: var(--lightgray);
-            font-size: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: none;
-            margin: 20px 0;
-        }
-
-        .box .img-box {
-            width: 200px; 
-            height: 200px; 
-            border-radius: 15px; 
-            overflow: hidden;
-            border: 3px solid #d32f2f; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visual */
-            background-color: whitesmoke;
-        }
-
-        .box .img-box img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* Maintain aspect ratio while covering the box */
-            transition: transform 0.5s ease; 
-        }
-
-        .box .img-box:hover img {
-            transform: scale(1.1); 
-        }
-    </style>
 </head>
 <body>
 <?php include 'components/user_header.php'; ?>

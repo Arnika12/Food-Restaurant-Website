@@ -1,14 +1,11 @@
 <?php
-// Include the database connection file
 include '../components/connect.php';
 
-// Start the session
 session_start();
 
-// Check if admin is logged in, otherwise redirect to login page
 if (!isset($_SESSION['admin_id'])) {
     header('location:admin_login.php');
-    exit(); // Stop further execution
+    exit();
 }
 
 // Handle updating order status
@@ -33,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_order'])) {
     $verify_delete = $conn->prepare("SELECT * FROM orders WHERE id=?");
     $verify_delete->execute([$delete_id]);
 
-    if ($verify_delete->rowCount() > 0) {
         // Delete the order
+    if ($verify_delete->rowCount() > 0) {
         $delete_order = $conn->prepare("DELETE FROM orders WHERE id=?");
         if ($delete_order->execute([$delete_id])) {
             $_SESSION['success_msg'] = 'Order deleted successfully';
@@ -63,7 +60,6 @@ $select_order = $conn->query("SELECT * FROM orders");
 </head>
 <body>
     <div class="main-container">
-        <!-- Header content -->
         <?php include '../components/admin_header.php'; ?>
 
         <section class="order-container">
@@ -77,7 +73,6 @@ $select_order = $conn->query("SELECT * FROM orders");
                         ?>
                         <!-- Order box -->
                         <div class="box">
-                            <!-- Order status -->
                             <div class="status" style="color: <?= $fetch_order['order_status'] == 'Pending' ? 'blue' : ($fetch_order['order_status'] == 'completed' ? 'green'  : 'coral'); ?>">
                                 <?= $fetch_order['order_status']; ?>
                             </div>
@@ -91,17 +86,13 @@ $select_order = $conn->query("SELECT * FROM orders");
                                 <p>Payment Method: <span><?= $fetch_order['payment_method']; ?></span></p>
                                 <p>Address: <span><?= $fetch_order['address']; ?></span></p>
                             </div>
-                            <!-- Form for updating order status and deleting order -->
                             <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                <!-- Hidden input for order ID -->
                                 <input type="hidden" name="order_id" value="<?= $fetch_order['id']; ?>">
-                                <!-- Dropdown for updating order status -->
                                 <select name="update_status">
                                     <option selected disabled>----- Select Order Status -----</option>
                                     <option value="Pending" <?= $fetch_order['order_status'] == 'Pending' ? 'selected' : ''; ?>>Pending</option>
                                     <option value="Completed" <?= $fetch_order['order_status'] == 'Completed' ? 'selected' : ''; ?>>Completed</option>
                                 </select>
-                                <!-- Buttons for updating and deleting order -->
                                 <div class="flex-btn">
                                     <input type="submit" name="update_order" value="Update Order" class="btn">
                                     <input type="submit" name="delete_order" value="Delete Order" class="btn" onclick="return confirm('Delete this order?');">
@@ -111,7 +102,6 @@ $select_order = $conn->query("SELECT * FROM orders");
                         <?php
                     }
                 } else {
-                    // Display message if no orders found
                     echo '<div class="empty"><p>No orders placed yet!</p></div>';
                 }
                 ?>

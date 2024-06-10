@@ -40,7 +40,6 @@ if (!$billing_details) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing Details</title>
-    <!-- Add your stylesheets and scripts here -->
 </head>
 <body>
     <!-- Display billing details -->

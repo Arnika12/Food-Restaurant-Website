@@ -1,0 +1,43 @@
+.terms-container {
+    padding: 8%;
+    padding-top: 1%;
+    line-height: 2;
+}
+
+.terms-container h3 {
+    color: red;
+}
+
+.header2 {
+    padding: 8% 80px 10px 80px;
+    /* padding: top right bottom left; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.backtohome a,
+svg {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+/* print button style */
+.print-button {
+    padding: 10px 20px;
+    background-color: rgb(192, 191, 191);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Hide the button when printing */
+@media print {
+    .print-button {
+        display: none;
+    }
+}

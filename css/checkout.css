@@ -1,0 +1,32 @@
+.remove-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #ff5252;
+}
+
+.qr-section {
+    padding: 2%;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.qr-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.qr-container img {
+    width: 200px;
+    height: 200px;
+}

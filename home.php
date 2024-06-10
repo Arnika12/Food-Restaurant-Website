@@ -15,7 +15,10 @@
 ?>
 
 <style type="text/css">
-    <?php  include 'style.css'; ?>
+    <?php  
+        include 'style.css'; 
+        include 'home.css'; 
+    ?>
 </style>
 
 <!DOCTYPE html>
@@ -28,77 +31,6 @@
     <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
     <title>Crave Harbour - Home Page</title>
     <link rel="icon" href="uploaded_img/icon.png" type="image">
-    <style>
-         .box-container1 {
-            margin-top:2%;
-            margin-left: 5%;
-            margin-right: 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2vw;
-            justify-items: center;
-        }
-
-        .box-container1 .box {
-            text-align: center;
-            color: var(--lightgray);
-            font-size: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: none;
-            margin: 20px 0;
-        }
-
-        .box-container1 .box .img-box {
-            width: 200px; 
-            height: 200px; 
-            border-radius: 15px; 
-            overflow: hidden;
-            border: 3px solid #d32f2f; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visual */
-            background-color: whitesmoke;
-        }
-
-        .box-container1 .box .img-box img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* Maintain aspect ratio while covering the box */
-            transition: transform 0.5s ease; 
-        }
-
-        .box-container1 .box .img-box:hover img {
-            transform: scale(1.1); 
-        }
-        /* ----- moving text -----*/
-.marquee-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 30px;
-    margin-top: 6%;
-}
-.marquee {
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
-    animation: marquee 20s linear infinite;
-    color: brown;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.marquee p {
-    display: inline-block; /* Display each paragraph on a new line */
-    margin: 0;
-    font-size:20px;
-    padding-right: 20px; /* Add some space between paragraphs */
-}
-@keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-    </style>
 </head>
 <body>
     <?php include 'components/user_header.php'; ?>

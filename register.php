@@ -8,52 +8,51 @@
         $user_id = '';
     }
 
-if (isset($_POST['submit']))
-{
-    $id = uniqid();
-    $name = $_POST['name'];
-    $name = filter_var($name, FILTER_SANITIZE_STRING);
-    $email = $_POST['email'];
-    $email = filter_var($email, FILTER_SANITIZE_STRING);
-    $pass = sha1($_POST['pass']);
-    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-    $pass = sha1($_POST['pass']); // Remove filter_var for passwords
-    $cpass = sha1($_POST['cpass']);
-    // $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
-    $image = $_FILES['image']['name'];
-    $image = filter_var($image, FILTER_SANITIZE_STRING);
-    $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = 'uploaded_img/'.$image;
-    $select_user = $conn->prepare("SELECT * FROM users WHERE email=?");
-    $select_user->execute([$email]);
-    $row = $select_user->fetch(PDO::FETCH_ASSOC);
+    if (isset($_POST['submit']))
+    {
+        $id = uniqid();
+        $name = $_POST['name'];
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
+        $email = $_POST['email'];
+        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $pass = sha1($_POST['pass']);
+        $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+        $pass = sha1($_POST['pass']); 
+        $cpass = sha1($_POST['cpass']);
+        $image = $_FILES['image']['name'];
+        $image = filter_var($image, FILTER_SANITIZE_STRING);
+        $image_tmp_name = $_FILES['image']['tmp_name'];
+        $image_folder = 'uploaded_img/'.$image;
+        $select_user = $conn->prepare("SELECT * FROM users WHERE email=?");
+        $select_user->execute([$email]);
+        $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-    if ($select_user->rowCount() > 0) 
-    {
-        $warning_msg[] = 'email already exist';
-    }else
-    {
-        if ($pass != $cpass) 
+        if ($select_user->rowCount() > 0) 
         {
-            $warning_msg[] = 'confirm password not matched!';
+            $warning_msg[] = 'email already exist';
         }else
         {
-            $insert_user = $conn->prepare("INSERT INTO users (id,name, email, password, profile) VALUES(?,?,?,?,?)");
-            $insert_user->execute([$id, $name, $email, $cpass, $image]);
-            $success_msg[] = "New admin registered successfully";
-            move_uploaded_file($image_tmp_name, $image_folder) ; // Check if file was uploaded successfully
-            
-            $select_user = $conn->prepare("SELECT * FROM users WHERE email=? AND password=? ");
-            $select_user->execute([$email, $pass]);
-            $row = $select_user->fetch(PDO::FETCH_ASSOC);
+            if ($pass != $cpass) 
+            {
+                $warning_msg[] = 'confirm password not matched!';
+            }else
+            {
+                $insert_user = $conn->prepare("INSERT INTO users (id,name, email, password, profile) VALUES(?,?,?,?,?)");
+                $insert_user->execute([$id, $name, $email, $cpass, $image]);
+                $success_msg[] = "New admin registered successfully";
+                move_uploaded_file($image_tmp_name, $image_folder) ; // Check if file was uploaded successfully
+                
+                $select_user = $conn->prepare("SELECT * FROM users WHERE email=? AND password=? ");
+                $select_user->execute([$email, $pass]);
+                $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-            if($select_user->rowCount() > 0){
-                $_SESSION['user_id'] = $row['id'];
-                header('location:home.php');
-            }      
+                if($select_user->rowCount() > 0){
+                    $_SESSION['user_id'] = $row['id'];
+                    header('location:home.php');
+                }      
+            }
         }
     }
-}
 ?>
 
 <style>

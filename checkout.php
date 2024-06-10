@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include 'components/connect.php'; 
+include 'qrlib/qrlib.php';
 session_start();
 
 $warning_msg = [];
@@ -51,12 +52,22 @@ if (isset($_POST['place_order'])) {
         $address_type = filter_input(INPUT_POST, 'address_type', FILTER_SANITIZE_STRING);
         $product_id = filter_input(INPUT_POST, 'product_id', FILTER_SANITIZE_NUMBER_INT);
 
+        // Store billing details and other relevant information in the session
+        $_SESSION['name'] = $name;
+        $_SESSION['number'] = $number;
+        $_SESSION['email'] = $email;
+        $_SESSION['address'] = $address;
+        $_SESSION['address_type'] = $address_type;
+        $_SESSION['total_amount'] = $total_amount;
+        $_SESSION['product_id'] = $product_id;
+
         // Check if 'method' is set in the $_POST array
         if (isset($_POST['payment_method'])) {
             if ($_POST['payment_method'] == "cash_on_delivery") {
                 processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount, $product_id);
             } elseif ($_POST['payment_method'] == "online_payment") {
-                header('Location: payscript.php');
+                // Redirect to a separate page for QR code display
+                header("Location: payment_qr.php?amount=$total_amount&user_id=$user_id");
                 exit();
             } else {
                 $warning_msg[] = 'Invalid payment method';
@@ -69,13 +80,20 @@ if (isset($_POST['place_order'])) {
     }
 }
 
+// Handle payment confirmation
+if (isset($_POST['confirm_payment'])) {
+    // Place the order as if it was paid
+    processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount, $product_id);
+    echo "<script>alert('Payment confirmed and order placed successfully!');</script>";
+}
+
 function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $address, $address_type, $total_amount, $product_id) {
     $insert_order = $conn->prepare("INSERT INTO orders (user_id, name, number, email, address, address_type, payment_method, total_amount, order_date, order_status, product_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pending', ?)");
     
     $order_date = date("Y-m-d");
 
     $insert_order->execute([$user_id, $name, $number, $email, $address, $address_type, 'Cash on Delivery', $total_amount, $order_date, $product_id]);
-        if ($insert_order->rowCount() > 0) {
+    if ($insert_order->rowCount() > 0) {
         $clear_cart = $conn->prepare("DELETE FROM cart WHERE user_id = ?");
         $clear_cart->execute([$user_id]);
         
@@ -87,7 +105,10 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
 ?>
 
 <style type="text/css">
-    <?php include 'style.css'; ?>
+    <?php 
+        include 'style.css'; 
+        include 'css/checkout.css';    
+    ?>
 </style>
 
 <!DOCTYPE html>
@@ -97,25 +118,10 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crave Harbour - Checkout Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .remove-btn {
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .remove-btn:hover {
-            background-color: #ff5252;
-        }
-    </style>
 </head>
 <body>
     <?php include 'components/user_header.php'; ?>
-    
+
     <section style="padding: 1%; background-color: #f0f0f0;">
         <div class="banner" style="background-color: #ffffff; border-radius: 5px; padding: 2%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 0; min-height: 30vh;">
             <div class="detail" style="text-align: center;">
@@ -130,7 +136,7 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
             <button><a href="#summary">View Order Summary</a></button>
         </div>
         <div class="amount-container">
-            <h3>Total Amount Payable: $<?php echo $total_amount; ?></h3>
+            <h3>Total Amount Payable: Rs.<?php echo $total_amount; ?></h3>
         </div>
     </div>
 
@@ -161,7 +167,7 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
                     <!-- Hidden input to store product_id -->
                     <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
                 </div>
-                
+
                 <!-- Place Order Button -->
                 <button type="submit" name="place_order" class="btn">Place Order</button>
             </form>
@@ -185,12 +191,12 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
                                 <p>Price: Rs. <?php echo $fetch_cart['price']; ?></p>
                                 <p>Quantity: <?php echo $fetch_cart['qty']; ?></p>
                                 <p>Subtotal: Rs. <?php echo $sub_total; ?></p>
-                                 <!-- Add Remove button -->
+                                <!-- Add Remove button -->
                                 <form action="" method="post">
                                     <input type="hidden" name="product_id" value="<?php echo $fetch_cart['product_id']; ?>">
                                     <button type="submit" name="remove_product" class="remove-btn">Remove</button>
                                 </form>
-                                </div>
+                            </div>
                         </div>
                 <?php
                     }
@@ -199,10 +205,24 @@ function processCashOnDeliveryOrder($conn, $user_id, $name, $number, $email, $ad
                 }
                 ?>
                 <hr>
-                <h3>Total Amount Payable: $<?php echo $total_amount; ?></h3>
+                <h3>Total Amount Payable: Rs.<?php echo $total_amount; ?></h3>
             </div>
         </div>
     </section>
+
+    <!-- QR Code Display Section -->
+    <?php if (isset($_GET['show_qr']) && $_GET['show_qr'] == 'true'): ?>
+        <section class="qr-section">
+            <div class="qr-container">
+                <h2>Scan to Pay</h2>
+                <img src="temp/qrcode.png" alt="QR Code for Payment">
+                <p>Total Amount: $<?php echo $total_amount; ?></p>
+                <form action="" method="post">
+                    <button type="submit" name="confirm_payment" class="btn">I have paid</button>
+                </form>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <?php include 'components/footer.php'; ?>
     <?php include 'components/dark.php'; ?>

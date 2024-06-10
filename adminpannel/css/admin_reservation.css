@@ -1,0 +1,16 @@
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; 
+    align-items: center;
+}
+
+.box p{
+    padding : 0;
+    margin : 0;
+}
+@media screen and (max-width: 768px) {
+    .box-container {
+        grid-template-columns: repeat(1, 1fr); /* Display one box per row on smaller screens */
+    }
+}

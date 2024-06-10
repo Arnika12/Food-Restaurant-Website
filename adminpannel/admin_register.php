@@ -5,7 +5,6 @@ include '../components/connect.php';
 $admin_id = isset($_SESSION['admin_id']) ? $_SESSION['admin_id'] : null;
 
 if ($admin_id) {
-    // Redirect to dashboard or another appropriate page
     header('location:dashboard.php');
     exit();
 }
@@ -16,7 +15,6 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     
-    // Use password_hash to hash the password securely
     $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     $pass = filter_var($pass, FILTER_SANITIZE_STRING);
     $cpass = password_hash($_POST['cpass'], PASSWORD_DEFAULT);

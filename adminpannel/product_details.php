@@ -33,33 +33,6 @@ $fetch_post = $select_post->fetch(PDO::FETCH_ASSOC);
           integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="uploaded_img/icon.png" type="image">
-    <style>
-        .back-btn-container {
-        position: fixed;
-        top: 18vw;
-        left: 25vw;
-        z-index: 999; /* Ensure it appears above other content */
-    }
-
-    .back-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-decoration: none;
-        color: #ffffff;
-        background-color: #007bff;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .back-btn:hover {
-        background-color: #0056b3;
-    }
-
-    .back-btn i {
-        margin-right: 5px;
-    }
-    </style>
     <title>Admin - Product Details</title>
 </head>
 <body>

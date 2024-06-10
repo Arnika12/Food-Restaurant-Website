@@ -1,0 +1,25 @@
+.back-btn-container {
+    position: fixed;
+    top: 18vw;
+    left: 25vw;
+    z-index: 999;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+.back-btn i {
+    margin-right: 5px;
+}

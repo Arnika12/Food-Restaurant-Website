@@ -9,7 +9,6 @@
         $user_id = '';
     }
 
-    // $get_id = $_GET['get_id'];
     $get_id = isset($_GET['get_id']) ? $_GET['get_id'] : ''; 
 
     include 'components/add_wishlist.php'; 
@@ -114,39 +113,6 @@
                     <p>6. Enjoy your meal!</p>
 
                 </div>
-                <!-- <div class="steps">
-                    <div class="img-box">
-                        <div style="display: flex; align-items: center;">
-                            <div class="img">
-                                <img src="image/chef-aboutus/orderonline.jpg">
-                            </div>
-                            <div><img src="image/icon-19.png"></div>
-                        </div>
-                        <span>1</span>
-                        <p>Make your order</p>
-                    </div>
-
-                    <div class="img-box">
-                        <div style="display: flex; align-items: center;">
-                            <div class="img">
-                                <img src="image/icon-17.png">
-                            </div>
-                            <div><img src="image/icon-19.png"></div>
-                        </div>
-                        <span>2</span>
-                        <p>Food is on the way </p>
-                    </div>
-
-                    <div class="img-box">
-                        <div style="display: flex; align-items: center;">
-                            <div class="img">
-                                <img src="image/icon-18.png">
-                            </div>
-                        </div>
-                        <span>3</span>
-                        <p>EAT & enjoy !</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -279,84 +245,6 @@
             </div>
         </div>
     </div>
-
-    <!-- -----  reviews --------- -->
-    <!-- <div class="reviews">
-        <div class="title">
-            <h1>The Best Food In Town</h1>
-        </div>
-        <div class="box-container">
-            <div class="img-box">
-                <img src="image/client.png">
-            </div>
-            <div class="reviews-container">
-                <?php
-                $select_reviews = $conn->prepare("SELECT * FROM reviews WHERE id = ?");
-                    // $select_reviews = $conn->prepare("SELECT * FROM reviews LIMIT 2");
-                    $select_reviews->execute([$get_id]);
-                    if ($select_reviews->rowCount() > 0) {
-                        while ($fetch_reviews = $select_reviews->fetch(PDO::FETCH_ASSOC)) {
-                ?>
-
-                <div class="box" <?php if($fetch_reviews['user_id'] == $user_id) { echo 'style="order: -1"'; } ?>>
-                    <?php
-                        $select_user = $conn->prepare("SELECT * FROM `users` WHERE id=?");
-                        $select_user->execute([$fetch_reviews['user_id']]);
-
-                        while($fetch_user = $select_user->fetch(PDO::FETCH_ASSOC)) {
-                    ?>
-                    
-                    <div class="user">
-                        <?php if ($fetch_user['profile'] != '') { ?>
-                            <img src="uploaded_img/<?= $fetch_user['profile']; ?>">
-                        <?php } else { ?>
-                            <h3><?= substr($fetch_user['name'], 0, 1); ?></h3>
-                        <?php } ?>
-                        <div>
-                            <p><?= $fetch_user['name']; ?></p>
-                            <span><?= $fetch_reviews['date']; ?></span>
-                        </div>
-                    </div>
-                    <?php } ?>
-
-                    <div class="ratings">
-                        <?php if ($fetch_reviews['rating'] == 1) { ?>
-                            <p><i class="bx bxs-star"></i><span><?= $fetch_reviews['rating']; ?></span></p>
-                        <?php } ?>
-                        <?php if ($fetch_reviews['rating'] == 2) { ?>
-                            <p><i class="bx bxs-star"></i><span><?= $fetch_reviews['rating']; ?></span></p>
-                        <?php } ?>
-                        <?php if ($fetch_reviews['rating'] == 3) { ?>
-                            <p><i class="bx bxs-star"></i><span><?= $fetch_reviews['rating']; ?></span></p>
-                        <?php } ?>
-                        <?php if ($fetch_reviews['rating'] == 4) { ?>
-                            <p><i class="bx bxs-star"></i><span><?= $fetch_reviews['rating']; ?></span></p>
-                        <?php } ?>
-                        <?php if ($fetch_reviews['rating'] == 5) { ?>
-                            <p><i class="bx bxs-star"></i><span><?= $fetch_reviews['rating']; ?></span></p>
-                        <?php } ?>
-                    </div>
-                    <h3 class="title"><?= $fetch_reviews['title']; ?></h3>
-                    <?php if($fetch_reviews['description'] != '') {?>
-                        <p class="description"> <?= $fetch_reviews['description']; ?></p>
-                    <?php } ?> 
-                </div>
-
-
-                <?php
-                        }
-                    } else {
-                        echo '
-                                <div class="empty">
-                                    <p>No reviews added yet!</p>
-                                </div>
-                        ';
-                    }
-                ?>
-            </div>
-        </div>
-    </div> -->
-
 
     <?php include 'components/footer.php'; ?>
 

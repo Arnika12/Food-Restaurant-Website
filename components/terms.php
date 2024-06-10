@@ -10,59 +10,21 @@
 ?>
 
 <style type="text/css">
-    <?php  include '../style.css'; ?>
+    <?php  
+        include '../style.css'; 
+        include 'css/terms.css';
+    ?>
 </style>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- box icon cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
     <link rel="icon" href="../uploaded_img/icon.png" type="image">
     <title>Crave Harbour - Terms & Condition Page</title>
-    <style>
-        .terms-container{
-            padding: 8%;
-            padding-top:1%;
-            line-height:2;
-        }
-        .terms-container h3{
-            color:red;
-        }
-        .header2 {
-            padding: 8% 80px 10px 80px;       /* padding: top right bottom left; */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .backtohome a,svg {
-            font-size: 20px;
-            text-decoration: none;
-            color: black;
-        }
-                /* print button style */
-        .print-button {
-            padding: 10px 20px;
-            background-color: rgb(192, 191, 191);
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 22px;
-        }
-
-        /* Hide the button when printing */
-        @media print {
-            .print-button {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>

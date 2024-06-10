@@ -852,12 +852,13 @@ footer .contact-icons a:hover {
     margin-bottom: 1.5rem;
 }
 
-products .box-container .box {
+.products .box-container .box {
     box-shadow: var(--outer-shadow);
     padding: 1rem;
     border-radius: 10px;
     position: relative;
     padding-bottom: 2rem;
+    border: 3px solid #d32f2f;
 }
 
 .products .box-container .box:hover {
@@ -954,7 +955,8 @@ products .box-container .box {
 }
 
 .cart-total p span {
-    color: var(--orange);
+    color: darkred;
+    font-size: 30px;
 }
 
 .cart-total .button {

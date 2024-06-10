@@ -42,7 +42,6 @@ if ($user_id != "") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-    /* Styling for h3 */
     h3 {
         font-size: 30px;
         color: #333;
@@ -50,7 +49,6 @@ if ($user_id != "") {
         margin-top: 20px;
     }
 
-    /* Styling for input button */
     input[type="submit"] {
         background-color: #0e90e4;
         color: #fff;
@@ -82,7 +80,7 @@ if ($user_id != "") {
 <?php include 'components/user_header.php'; ?>
 
 <div class="total-amount-container">
-    <h3 style="padding-top:10%;">Total Amount Payable: $<?php echo $total_amount; ?></h3>
+    <h3 style="padding-top:10%;">Total Amount Payable: Rs.<?php echo $total_amount; ?></h3>
 </div>
 
 <?php

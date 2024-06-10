@@ -8,10 +8,10 @@
         header('location:admin_login.php');
         exit;
     }
-    // Fetch admin profile data
-$select_profile = $conn->prepare("SELECT * FROM admin WHERE id = ?");
-$select_profile->execute([$admin_id]);
-$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+
+    $select_profile = $conn->prepare("SELECT * FROM admin WHERE id = ?");
+    $select_profile->execute([$admin_id]);
+    $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <style type="text/css">
@@ -23,7 +23,6 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- box icon cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="../uploaded_img/icon.png" type="image">
     <title>crave harbour Admin - Dashboard</title>
@@ -109,7 +108,7 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                     ?> 
                     <h3><?= $number_of_admin; ?></h3>
                     <p>Admin Accounts</p>
-                    <a href="user_accounts.php" class="btn">See admin</a>
+                    <a href="admin_accounts.php" class="btn">See admin</a>
                 </div>
 
                 <div class="box">
@@ -120,9 +119,20 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                     ?> 
                     <h3><?= $num_of_reservation; ?></h3>
                     <p>total reservation</p>
-                    <a href="admin_reservation.php" class="btn">total reservations</a>
+                    <a href="admin_reservation.php" class="btn">See reservations</a>
                 </div>
 
+                <div class="box">
+                    <?php
+                        $select_total_order = $conn->prepare("SELECT * FROM orders");
+                        $select_total_order->execute();
+                        $total_total_order = $select_total_order->rowCount();
+                    ?> 
+                    <h3><?= $total_total_order; ?></h3>
+                    <p>total orders</p>
+                    <a href="admin_order.php" class="btn">all orders</a>
+                </div>
+                
                 <div class="box">
                     <?php
                         $select_canceled_order = $conn->prepare("SELECT * FROM orders WHERE order_status=?");
@@ -144,27 +154,7 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                     <p>total confirm orders</p>
                     <a href="admin_order.php" class="btn">confirm order</a>
                 </div>
-
-                <div class="box">
-                    <?php
-                        $select_total_order = $conn->prepare("SELECT * FROM orders");
-                        $select_total_order->execute();
-                        $total_total_order = $select_total_order->rowCount();
-                    ?> 
-                    <h3><?= $total_total_order; ?></h3>
-                    <p>total orders</p>
-                    <a href="admin_order.php" class="btn">all orders</a>
-                </div>
-                <div class="box">
-                    <?php
-                       $select_reviews = $conn->prepare("SELECT * FROM reviews");
-                       $select_reviews->execute();
-                       $num_of_reviews = $select_reviews->rowCount();
-                    ?>
-                    <h3><?= $num_of_reviews; ?></h3>
-                    <p>total reviews</p>
-                    <a href="comments.php" class="btn">see reviews</a>
-                </div>
+                
             </div>
         </section>
     </div>

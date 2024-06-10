@@ -70,34 +70,9 @@ if ($verify_message->rowCount() > 0) {
         </div>
     </section>
 
-    <!-- <div class="services">
-        <div class="box-container">
-            <div class="box">
-                <img src="uploaded_img/1.jpg">
-                <div>
-                    <h1>Free shipping fast</h1>
-                </div>
-            </div>
-            <div class="box">
-                <img src="uploaded_img/guarantee1.png">
-                <div>
-                    <h1>money back & guarantee </h1>
-                </div>
-            </div>
-            <div class="box">
-                <img src="uploaded_img/24service.png">
-                <div>
-                    <h1>online support 24/7 </h1>
-                </div>
-            </div>
-
-        </div>
-    </div> -->
-
 	<div class="contact">
     <div class="form-container">
         <form action="" method="post">
-            <!-- <div class="img-box"><img src="image/contact.png"></div> -->
             <div class="title">
                 <h1>!!  SEND US YOUR QUERY !!</h1>
             </div>
