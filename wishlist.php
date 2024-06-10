@@ -28,38 +28,28 @@ if (isset($_POST['add_to_wishlist'])) {
 
 // Delete product from wishlist
 if (isset($_POST['delete_item'])) {
-    // Get the wishlist ID from the form submission
     $wishlist_id = $_POST['wishlist_id'];
 
-    // Sanitize the wishlist ID to prevent SQL injection
     $wishlist_id = filter_var($wishlist_id, FILTER_SANITIZE_NUMBER_INT);
 
-    // Prepare and execute a SELECT query to verify the existence of the wishlist item
     $verify_delete = $conn->prepare("SELECT * FROM wishlist WHERE id=?");
     $verify_delete->execute([$wishlist_id]);
 
-    // Check if the item exists
     if ($verify_delete->rowCount() > 0) {
-        // Prepare and execute a DELETE query to remove the wishlist item
         $delete_wishlist_id = $conn->prepare("DELETE FROM wishlist WHERE id=?");
         $delete_wishlist_id->execute([$wishlist_id]);
 
-        // Provide feedback to the user
         $success_msg[] = 'Wishlist item deleted successfully';
     } else {
-        // If the item doesn't exist, provide a warning message
         $warning_msg[] = 'Wishlist item does not exist or has already been deleted';
     }
 }
 
-// Make sure to initialize these variables as arrays to prevent the warning
 $success_msg = isset($success_msg) ? (array)$success_msg : array();
 $warning_msg = isset($warning_msg) ? (array)$warning_msg : array();
 $info_msg = isset($info_msg) ? (array)$info_msg : array();
 $error_msg = isset($error_msg) ? (array)$error_msg : array();
 ?>
-
-<!-- Rest of the code -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -184,7 +174,6 @@ $error_msg = isset($error_msg) ? (array)$error_msg : array();
     }
     ?>
 
-    <!-- custom js link -->
-    <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -12,13 +12,9 @@ if (isset($_POST['place_order'])) {
         // Check if 'method' is set in the $_POST array
         if (isset($_POST['payment_method'])) {
             if ($_POST['payment_method'] == "cash_on_delivery") {
-                // Process cash on delivery order
-                // Your code to process cash on delivery order
-                // Redirect to billing details page with parameters
                 header('Location: billing_details.php?name=' . urlencode($name) . '&number=' . urlencode($number) . '&email=' . urlencode($email) . '&address=' . urlencode($address) . '&address_type=' . urlencode($address_type) . '&total_amount=' . urlencode($total_amount) . '&payment_method=cash_on_delivery');
                 exit();
             } elseif ($_POST['payment_method'] == "online_payment") {
-                // Redirect to billing details page with parameters
                 header('Location: billing_details.php?name=' . urlencode($name) . '&number=' . urlencode($number) . '&email=' . urlencode($email) . '&address=' . urlencode($address) . '&address_type=' . urlencode($address_type) . '&total_amount=' . urlencode($total_amount) . '&payment_method=online_payment');
                 exit();
             } else {

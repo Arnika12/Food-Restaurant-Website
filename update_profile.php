@@ -103,27 +103,32 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <style>
-    <?php include 'style.css'; ?>
+    <?php include 'style.css';
+    ?>
 </style>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- box icon cdn link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+        integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="uploaded_img/icon.png" type="image">
     <title> Crave Harbour - User Update Profile Page </title>
 </head>
+
 <body>
-        <?php include 'components/user_header.php'; ?>
-        <section class="form-container">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <div class="profile">
-                        <img src="uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img">
-                    </div>
-                    <h3>Update Profile</h3>
-                    <?php
+    <?php include 'components/user_header.php'; ?>
+    <section class="form-container">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="profile">
+                <img src="uploaded_img/<?= $fetch_profile['profile']; ?>" class="logo-img">
+            </div>
+            <h3>Update Profile</h3>
+            <?php
                     if (!empty($warning_msg)) {
                         foreach ($warning_msg as $warning) {
                             echo "<span>$warning</span>";
@@ -135,38 +140,46 @@ $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                         }
                     }
                     ?>
-                    <input type="hidden" name="old_image" value="<?= $fetch_profile['profile']; ?>">
-                    <div class="input-field">
-                        <label>User Name <sup>*</sup></label>
-                        <input type="text" name="name" maxlength="20" placeholder="Enter User Name" oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['name']; ?>">
-                    </div>
-                    <div class="input-field">
-                        <label>User Email <sup>*</sup></label>
-                        <input type="email" name="email" maxlength="25" placeholder="Enter User Email" oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['email']; ?>">
-                    </div>
-                    <div class="input-field">
-                        <label>Old Password <sup>*</sup></label>
-                        <input type="password" name="old_pass" maxlength="20" placeholder="Enter Old Password" oninput="this.value.replace(/\s/g,'')">
-                    </div>
-                    <div class="input-field">
-                        <label>New Password <sup>*</sup></label>
-                        <input type="password" name="new_pass" maxlength="20" placeholder="Enter New Password" oninput="this.value.replace(/\s/g,'')">
-                    </div>
-                    <div class="input-field">
-                        <label>Confirm Password <sup>*</sup></label>
-                        <input type="password" name="cpass" maxlength="20" placeholder="Confirm New Password" oninput="this.value.replace(/\s/g,'')">
-                    </div>
-                    <div class="input-field">
-                        <label>Upload Profile <sup>*</sup></label>
-                        <input type="file" name="image" accept="image/*">
-                    </div>
-                    <input type="submit" name="submit" value="Update Profile" class="btn">
-                </form>
-        </section>
+            <input type="hidden" name="old_image" value="<?= $fetch_profile['profile']; ?>">
+            <div class="input-field">
+                <label>User Name <sup>*</sup></label>
+                <input type="text" name="name" maxlength="20" placeholder="Enter User Name"
+                    oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['name']; ?>">
+            </div>
+            <div class="input-field">
+                <label>User Email <sup>*</sup></label>
+                <input type="email" name="email" maxlength="25" placeholder="Enter User Email"
+                    oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['email']; ?>">
+            </div>
+            <div class="input-field">
+                <label>Old Password <sup>*</sup></label>
+                <input type="password" name="old_pass" maxlength="20" placeholder="Enter Old Password"
+                    oninput="this.value.replace(/\s/g,'')">
+            </div>
+            <div class="input-field">
+                <label>New Password <sup>*</sup></label>
+                <input type="password" name="new_pass" maxlength="20" placeholder="Enter New Password"
+                    oninput="this.value.replace(/\s/g,'')">
+            </div>
+            <div class="input-field">
+                <label>Confirm Password <sup>*</sup></label>
+                <input type="password" name="cpass" maxlength="20" placeholder="Confirm New Password"
+                    oninput="this.value.replace(/\s/g,'')">
+            </div>
+            <div class="input-field">
+                <label>Upload Profile <sup>*</sup></label>
+                <input type="file" name="image" accept="image/*">
+            </div>
+            <input type="submit" name="submit" value="Update Profile" class="btn">
+        </form>
+    </section>
     </div>
     <?php include 'components/dark.php'; ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
     <?php include 'components/alert.php'; ?>
 </body>
+
 </html>
