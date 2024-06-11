@@ -59,7 +59,7 @@
 <div class="foot-panel4">
   <div class="container">
     <div class="pages">
-      <p>Copyright &copy; 2024 All Rights Reserved By <span> <a href="mailto:arnikagunjal19@gmail.com">Arnika Gunjal </a></span> </p>
+      <p>Copyright &copy; 2024 All Rights Reserved By <span> <a href="mailto:craveharbour@gmail.com">Crave Harbour</a></span> </p>
     </div>
   </div>
 </div>

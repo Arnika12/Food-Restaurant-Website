@@ -83,11 +83,11 @@
                     <a href="view_posts.php" class="btn">See Deactive products</a>
                 </div>
 
-                <div class="box">
+                <!-- <div class="box">
                     <h3>Generate Report</h3>
                     <p>See Product Analytics</p>
                     <a href="generate_report.php" class="btn">Check report</a>
-                </div>
+                </div> -->
                 
                 <div class="box">
                     <?php

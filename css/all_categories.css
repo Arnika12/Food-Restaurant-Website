@@ -6,10 +6,10 @@
 .banner1 {
     background-image: var(--banner-img);
     width: 100%;
-    min-height: 20vh;
+    /* min-height: 20vh; */
     position: relative;
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,7 @@
 
 .banner1 h1 {
     color: #d32f2f;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .banner1 p {
@@ -26,12 +26,13 @@
 }
 
 .box-container {
-    margin-top: 2%;
+    /* margin-top: 1%;
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 5%; */
+    margin: 2% 5% 3% 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3vw;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2vw;
     justify-items: center;
 }
 
@@ -46,9 +47,9 @@
 }
 
 .box .img-box {
-    width: 200px;
-    height: 200px;
-    border-radius: 15px;
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
     overflow: hidden;
     border: 3px solid #d32f2f;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

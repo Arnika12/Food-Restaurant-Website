@@ -17,7 +17,7 @@
 <style type="text/css">
     <?php  
         include 'style.css'; 
-        include 'home.css'; 
+        include 'css/home.css'; 
     ?>
 </style>
 

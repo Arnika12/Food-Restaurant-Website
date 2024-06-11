@@ -76,6 +76,12 @@
             margin-left:5%;
             font-size:1.5rem;
         }
+        .form-container{
+            padding : 0;
+        }
+        .form-container form{
+            border: 2px solid mediumvioletred;
+        }
     </style>
 </head>
 
